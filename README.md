@@ -16,6 +16,6 @@ Python code that analyzes the video stream of the Go game, mapping the game stat
 Percussion and melody sequencer. Receives OSC messages of game piece positions from Python to update the sequencer
 
 ### How to Use
-You'll need a webcam shooting an aerial view of the Go board to use as an input to OpenCV. Start up the python script with `python stream_analyze_game.py` and you'll be prompted to click on the four edges of the Go board. Make sure the board doesn't move around during gameplay, as this could skew the position calculations. 
+You'll need a webcam shooting an aerial view of the Go board to use as an input to OpenCV. Start up the python script with `python stream_analyze_game.py` and you'll be prompted to click on the four edges of the Go board. Click in the following order: upper left, upper right, lower left, lower right. Then press any key to start the video stream. Make sure the board doesn't move around during gameplay, as this could skew the position calculations. 
 
 Start up the `Lets_Go_Sequencer.maxpat` and turn audio on to start the piece. As you place pieces on the game board, you should see and hear the sequencer in the max patch update accordingly. 
