@@ -1,5 +1,7 @@
 # Lets Go
-Let’s Go uses computer vision to track the positions of the black and white tokens in the popular board game Go. By representing a board state as a matrix, we can transform the Go board into a step sequencer and melody creator, allowing the two players to create music together that builds as the game progresses.
+Let’s Go uses computer vision to track the positions of the black and white tokens in the popular board game Go. By representing a board state as a matrix, we can transform the Go board into a step sequencer and melody creator, allowing the two players to create music together that builds as the game progresses. OpenCV processes a live video stream of the Go board captured with an HD webcam, converting the picture to black and white to isolate the white go pieces, then inverting the frame to isolate the black.
+
+We then use OpenCV’s blob detection algorithm to find the center of each game piece on the board. We can interpolate the location of each intersection on the board given the location of the four edges of the board and generate two 13x13 binary matrices representing the current game state. These matrices are sent to Max MSP using Open Sound Control(OSC). Within the Max patch, the matrix of black pieces was used to control a step sequencer of percussion sounds. The matrix of white pieces was split in half, where the left half controlled 7 drone sounds and the right half controlled 6 melody lines.
 
 ## Depencies
 * Numpy
